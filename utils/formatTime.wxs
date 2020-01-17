@@ -1,0 +1,37 @@
+function dateFormat(date) {
+  var time = getDate(date)
+  var h=time.getHours()
+  var m=time.getMinutes()
+  if((h+'').length===1){h='0'+h}
+  if((m+'').length===1){m='0'+m}
+  return h+':'+m
+}
+
+function monthFormat(date) {
+  var dateMonth = date.toString().substring(0, 2)
+  var dateDay = date.toString().substring(2, 4)
+  if (dateMonth[0] === "0") { dateMonth = dateMonth[1]}
+  if (dateDay[0] === "0") { dateDay = dateDay[1] }
+  return dateMonth + "月" + dateDay + "日"
+}
+
+function format(date,createDate){
+  var time = getDate(date)
+  var y = time.getFullYear()
+  var M=time.getMonth()+1
+  var d=time.getDate()
+  var h = time.getHours()
+  var m = time.getMinutes()
+  if ((h + '').length === 1) { h = '0' + h }
+  if ((m + '').length === 1) { m = '0' + m }
+  var time2=getDate(createDate)
+  var y2 = time2.getFullYear()
+  var M2 = time2.getMonth() + 1
+  var d2 = time2.getDate()
+  if(y===y2&&M===M2&&d===d2){
+    return h + ':' + m
+  }else{
+    return M + "月" + d + "日" + '' + h + ':' + m
+  }
+}
+module.exports = { format:format,dateFormat: dateFormat, monthFormat: monthFormat }

@@ -1,0 +1,17 @@
+<view class="wrapper">  
+  <view>
+  <scroll-view scroll-y class="listWrapper" wx:if="{{list}}">
+    <view class="item" wx:for="{{list}}" wx:key="id" wx:for-index="index" wx:if="{{!item.completed}}">
+      <view class="select" hover-class="active" hover-stay-time="1000" data-id="{{item.id}}" bindtap="finished"></view>
+      <text data-item="{{item}}" bindtap="changeText" bindlongpress="destroyTask">{{item.description}}</text>
+    </view>
+  </scroll-view>
+  </view>
+  <view class="start">
+    <y-button bindclickButton="createTask">创建任务</y-button>
+    <navigator url="/pages/tomato/tomato" hover-class="none" class="clockWrapper">
+      <y-clock text="点击开始闹钟" fontSize="28"></y-clock>
+    </navigator>
+    <y-confirm visible="{{visible}}" placeholder="开始创建任务吧" bindconfirm="confirm" bindcancel="cancel" updateItem="{{updateItem}}"></y-confirm>
+  </view>
+</view>

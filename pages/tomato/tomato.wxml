@@ -1,0 +1,15 @@
+<view class="wrapper">
+  <view class="clock">
+    <y-clock text="{{time}}"></y-clock>
+  </view>
+  <view class="button">
+    <y-button size="mini" wx:if="{{timerStatus==='stop'}}" bindtap="stopTimer">暂停</y-button>
+    <y-button size="mini" wx:elif="{{timerStatus==='continue'}}" bindtap="startTimer">继续</y-button>
+    <y-button size="mini" wx:else bindtap="startAgain">再来一组</y-button>
+  </view>
+  <view class="button" wx:if="{{timerStatus!=='startAgain'}}">
+    <y-button type="hyaline" size="mini" bindclickButton="abandon">放弃</y-button>
+  </view>
+  <y-confirm visible="{{abandonVisible}}" placeholder="放弃理由" bindconfirm="abandonConfirm" bindcancel="abandonCancel" ></y-confirm>
+  <y-confirm visible="{{finishVisible}}" placeholder="完成了什么" bindconfirm="finishConfirm" bindcancel="finishCancel" ></y-confirm>
+</view>

@@ -1,0 +1,33 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(253,255,249,1) 0%,rgba(244,249,248,1) 100%);
+}
+.avatar{
+  width: 300rpx;
+  height: 300rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  border:12rpx solid  #F6705A;
+}
+.username{
+  
+  font-size:40rpx;
+  margin:40rpx 0;
+  padding:0.5em 0.8em;
+  border-bottom:4rpx solid #F6705A;
+}
+.loginButton{
+  width:360rpx;
+  height: 80rpx;
+  font-size:26rpx;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background:linear-gradient(to right,#EF9875,#F6705A);
+  box-shadow:0rpx 11rpx 32rpx 0rpx rgba(246,112,90,0.3);
+}

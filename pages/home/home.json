@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "y-button": "../../components/button/button",
+    "y-clock": "../../components/clock/clock",
+    "y-confirm": "../../components/confirm/confirm"
+  }
+}

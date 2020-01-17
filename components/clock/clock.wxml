@@ -1,0 +1,6 @@
+<view class="clock {{active?'active':''}}">
+  <text style="font-size:{{fontSize+'rpx'}}">
+    {{text}}
+  </text>
+  <image src="../../images/tomato.png"></image>
+</view>

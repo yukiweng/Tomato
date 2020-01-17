@@ -1,0 +1,55 @@
+:not(not){
+  box-sizing:border-box;
+}
+.container{
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+}
+.confirm{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background:#fff;
+  border-radius: 16rpx;
+  width:640rpx;
+  padding:0.8em 0.5em 0 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.textarea{
+  border:1px solid red;
+  border-radius: 8rpx;
+  background: #eee;
+  color:#666;
+  width:100%;
+  height: 120rpx;
+  padding:0.5em;
+  
+}
+.actions{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size:32rpx
+}
+.actionButton{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:0.5em;
+}
+.actionButton.sure{
+  color: #F6705A;
+}
+.actionButton.sure:active{
+  opacity: 0.8
+}

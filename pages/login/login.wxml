@@ -1,0 +1,5 @@
+<view class="wrapper">
+  <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+  <open-data type="userNickName" class="username"></open-data> 
+  <button class="loginButton" open-type="getUserInfo" bindgetuserinfo="login" withCredentials>登录</button>
+</view>

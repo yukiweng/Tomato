@@ -1,0 +1,12 @@
+<view class="container" wx:if="{{visible}}">
+  <view class="confirm">
+    <textarea placeholder="{{placeholder}}" bindinput="watchValue" value="{{updateItem&&updateItem.description}}" class="textarea">
+    
+    </textarea>
+    <view class="actions">
+      <view class="actionButton sure" bindtap="confirm">确定</view>
+      |
+      <view class="actionButton" bindtap="cancel">取消</view>
+    </view>
+  </view>
+</view>

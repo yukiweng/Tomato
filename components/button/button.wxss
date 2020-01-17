@@ -1,0 +1,22 @@
+.button{  
+  width:540rpx;
+  height: 80rpx;
+  font-size:26rpx;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background:linear-gradient(to right,#EF9875,#F6705A);
+  box-shadow:0rpx 11rpx 32rpx 0rpx rgba(246,112,90,0.3);
+  
+}
+
+.button.hyaline{
+background: transparent;
+border:2rpx solid #F6705A;
+color:#F6705A;
+box-shadow: none;
+}
+.button.mini{
+  width:360rpx;
+}

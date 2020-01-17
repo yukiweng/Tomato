@@ -1,0 +1,46 @@
+<view class="wrapper">
+  <view class="header">
+    <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+    <open-data type="userNickName"></open-data> 
+    <button open-type="contact" class="feedback">问题反馈</button>
+  </view>
+ 
+  <view class="tabs">
+  <view class="tab-history" bindtap="changeTab">番茄历史</view>
+  <view class="tab-finish" bindtap="changeTab">我完成的任务</view>
+  <view class="lineWrapper">
+    <view class="line line-{{tab}}"></view>
+  </view>
+  </view>
+  
+  <wxs src="../../utils/formatTime.wxs" module="formattor"></wxs>
+  <scroll-view wx:if="{{tab==='history'}}" class="listWrapper" scroll-y>
+  <view wx:for="{{tomatoes}}" wx:key="index" wx:for-item="item" wx-for:index="index" class="taskList">
+  <text class="month">{{formattor.monthFormat(index)}}</text>
+ 
+ <scroll-view scroll-y class="taskItemWrapper">
+  <view wx:for="{{tomatoes[index]}}" wx:for-item="tomato" wx:key="index" class="taskItem">
+  <text class="createdTime">{{formattor.dateFormat(tomato.created_at)}}</text>
+ <text class="content"> {{tomato.description}}</text>
+  </view>
+</scroll-view>
+
+  </view>
+  </scroll-view>
+
+  <scroll-view wx:if="{{tab==='finish'}}" class="listWrapper" scroll-y>
+  <view wx:for="{{todos}}" wx:key="index" wx:for-item="item" wx:for-index="father_index" class="taskList">
+  <text class="month">{{formattor.monthFormat(father_index)}}</text>
+  <text class="finishTime" wx:if="{{updatedTime&&father_index===day}}">完成于 {{formattor.format(updatedTime,createdTime)}}</text> 
+  <scroll-view scroll-y class="taskItemWrapper">
+  <view wx:for="{{todos[father_index]}}" wx:for-item="todo" wx:key="index" class="taskItem">
+  <text class="createdTime">{{formattor.dateFormat(todo.created_at)}}</text> 
+  <text class="content" selectable bindtap="showFinishTime" data-created="{{todo.created_at}}" data-updated="{{todo.updated_at}}" data-day="{{father_index}}">{{todo.description}}</text>
+  {{todos[index]}}
+  </view>
+</scroll-view>
+
+  </view>
+  </scroll-view>
+</view>
+

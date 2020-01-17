@@ -1,0 +1,2 @@
+
+<button class="[button,{{type==='hyaline'?'hyaline':''}},{{size==='mini'?'mini':''}}]" bindtap="buttonEvent"><slot></slot></button>

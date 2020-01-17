@@ -1,0 +1,16 @@
+Component({
+  properties:{
+    active:{
+      type:Boolean,
+      value:false
+    },
+    text:{
+      type:String,
+      value:''
+    },
+    fontSize:{
+      type:Number,
+      value:48
+    }
+  }
+})
